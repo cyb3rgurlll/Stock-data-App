@@ -5,7 +5,7 @@ import pandas as pd
 st.write("""
 # Simple Stock Price
          
-Shown are the stock closing price and volume of Amazon!
+Shown are the stock **closing price** and ***volume*** of Amazon!
 
 """)
 
@@ -18,5 +18,11 @@ tickerData = yf.Ticker(tickerSymbol)
 tickerDf = tickerData.history(period='1d', start='2014-5-31', end='2024-5-31')
 # Open High Low Close Volume Dividends Stock Splits
 
+st.write("""
+  ##Closing Price
+""")
 st.line_chart(tickerDf.Close)
+st.write("""
+  ##Volume Price
+""")
 st.line_chart(tickerDf.Volume)
